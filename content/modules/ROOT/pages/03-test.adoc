@@ -1,0 +1,89 @@
+== Log into Grafana
+
+In the previous challenge, we installed Grafana on `+rhel+` and PCP on
+`+rhel2+` and `+rhel3+`.
+
+Click on the `+RHEL Grafana Console+` tab.
+
+.Grafana Tab
+image::../assets/grafanatab.png[Grafana Tab]
+
+Log into Grafana with the following credentials.
+
+Username
+
+[source,text]
+----
+admin
+----
+
+Password
+
+[source,text]
+----
+admin
+----
+
+.Grafana Login Menu
+image::../assets/grafanaloginmenu.png[Grafana Login Menu]
+
+== Grafana first login
+
+Upon successful login, Grafana will ask you to change the password. Skip
+this for now by clicking on `+Skip+`.
+
+.Skip password
+image::../assets/skippassword.png[Skip password]
+
+Click on `+Data Sources+`.
+
+.Data Sources
+image::../assets/datasources.png[Data Sources]
+
+Click on `+PCP Redis+`.
+
+.pcp redis
+image::../assets/pcpredis.png[pcp redis]
+
+Click on `+Save & Test+`.
+
+.save and test
+image::../assets/savetest.png[save and test]
+
+Here’s what a successful result should look like.
+
+.success
+image::../assets/savetestsuccess.png[success]
+
+Click on the `+Dashboards+` tab.
+
+.dashboards tab
+image::../assets/dashboardstab.png[dashboards tab]
+
+Click on `+Import+` next to the `+PCP Redis: Host Overview+` title bar.
+
+.pcpredishostoverview
+image::../assets/pcpredishostoverview.png[pcpredishostoverview]
+
+.success
+image::../assets/pcpredishostoverviewsuccess.png[success]
+
+Click on `+PCP Redis: Host Overview+`.
+
+.button
+image::../assets/pcpredishostoverviewclick.png[button]
+
+A dashboard showing the performance metrics for the `+rhel+` host will
+be displayed.
+
+.result
+image::../assets/dashboard.png[result]
+
+You can see that only a small amount of data has been collected since
+the graph lines are short.
+
+To view the performance metrics for the `+rhel2+` and `+rhel3+` host,
+click the `+host+` dropdown bar.
+
+.dropdown
+image::../assets/dropdown.png[dropdown]

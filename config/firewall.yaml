@@ -1,0 +1,24 @@
+---
+# By default egress traffic is not allowed, define below the ports allowed.
+egress:
+  - ports:
+      - protocol: TCP
+        port: 443
+
+# The following lines are suggested based on Instruqt's allow_external_ingress fields:
+# rhel2:
+#   - http
+#   - https
+#   - high-ports
+# rhel3:
+#   - http
+#   - https
+#   - high-ports
+# rhel:
+#   - http
+#   - https
+#   - high-ports
+# rhel4:
+#   - http
+#   - https
+#   - high-ports

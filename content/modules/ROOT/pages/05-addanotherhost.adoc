@@ -1,0 +1,90 @@
+So far we have configured 2 RHEL hosts (`+rhel2+`, `+rhel3+`) to be
+monitored and have their performance metrics collected by host running
+Grafana and Redis (`+rhel+`). We’ll now edit the play book to configure
+and add another host `+rhel4+`. This exercise is useful as you add more
+and more hosts to your datacenter.
+
+The following configuration file will install PCP on the host `+rhel4+`.
+As well, it will tell the `+rhel+` Grafana host to monitor `+rhel4+`, in
+addition to the other hosts. Run this command in the link:tab-0[button
+label="`rhel`"] terminal.
+
+[source,bash,run]
+----
+tee ~/metrics/inventory.yml << EOF
+all:
+  children:
+    servers:
+      hosts:
+        rhel2:
+        rhel3:
+        rhel4:
+      vars:
+        firewall:
+          - service: pmcd
+            state: enabled
+        metrics_retention_days: 7
+    metrics_monitor:
+      hosts:
+        rhel:
+      vars:
+        firewall:
+          - service: grafana
+            state: enabled
+        metrics_graph_service: yes
+        metrics_query_service: yes
+        metrics_retention_days: 7
+        metrics_monitored_hosts:  "{{ groups['servers'] }}"
+EOF
+----
+
+You may notice the only change made has been to add `+rhel4+` to this
+section:
+
+[source,yaml,nocopy]
+----
+all:
+  children:
+    servers:
+      hosts:
+        rhel2:
+        rhel3:
+        rhel4:
+----
+
+You may ask yourself why we did not remove the originally configured
+hosts or the Grafana configuration. The reason is because RHEL System
+Roles are based on Ansible. Ansible playbooks are designed to be run
+multiple times ensuring that the same result is obtained on each target
+host. Therefore, running the playbook multiple times on the same hosts
+should obtain the same result on each host.
+
+Run the playbook with the following command to execute the modified
+playbook.
+
+[source,bash,run]
+----
+ansible-playbook ~/metrics/metrics.yml -b -i ~/metrics/inventory.yml
+----
+
+Now go back to the Grafana dashboard.
+
+Refresh the dashboard page on your browser.
+
+You should be able to see `+rhel4+` has been added and metrics are being
+collected.
+
+.rhel4
+image::../assets/rhel4.png[rhel4]
+
+Congratulations on completing this lab!
+
+For more information on RHEL System Roles, please consider browsing the
+following:
+
+* https://www.redhat.com/en/blog/automate-performance-metrics-collection-and-visualization-rhel-system-roles[Automate
+performance metrics collection and visualization with RHEL System Roles]
+* https://www.redhat.com/en/blog/red-hat-enterprise-linux-system-roles[Red
+Hat Enterprise Linux System Roles blog series].
+* https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/9/html/administration_and_configuration_tasks_using_system_roles_in_rhel[Administration
+and configuration tasks using System Roles in RHEL]

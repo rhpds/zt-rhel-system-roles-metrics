@@ -1,0 +1,45 @@
+== Introduction
+
+In this lab there are 4 hosts. Below is a description of them and their
+purpose.
+
+[width="100%",cols="11%,89%",options="header",]
+|===
+|Host |Description
+|`+rhel+` |Control node where the metrics system role will run. As well,
+Grafana will be installed here.
+
+|`+rhel2+` |RHEL9 host where we will collect metrics from.
+
+|`+rhel3+` |RHEL9 host where we will collect metrics from.
+
+|`+rhel4+` |RHEL9 host where we will collect metrics from.
+|===
+
+Initially we will configure the first 3 hosts. After, we will add
+`+rhel4+` to the observability system since it is likely you will need
+to add additional hosts to your infrastructure well after the initial
+installation and configuration has taken place.
+
+We’ll start by installing RHEL System Roles on `+rhel+`
+
+First, click on the menu tab labelled `+rhel+`. Click this button
+link:tab-0[button label="`rhel`"] to switch to the `+rhel+` tab.
+
+.rhel tab
+image::../assets/rhel_tab.png[rhel tab]
+
+Click the `+run+` button to run the following command into the `+rhel+`
+terminal.
+
+[source,bash,run]
+----
+dnf install -y rhel-system-roles
+----
+
+The resulting output should look similar to below.
+
+.output
+image::../assets/dnf_output.png[output]
+
+RHEL System Roles are now installed.

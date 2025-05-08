@@ -1,0 +1,9 @@
+---
+name: modules
+version: master
+
+asciidoc:
+  attributes:
+    lab_name: "Visualize performance on your Red Hat Enterprise Linux Infrastructure with RHEL System Roles Metrics role"
+    release-version: master
+    page-pagination: true

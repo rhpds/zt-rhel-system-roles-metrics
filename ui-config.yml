@@ -1,0 +1,24 @@
+---
+antora:
+  name: modules
+  dir: www
+  modules:
+    - name: "01-install"
+      label: "Install"
+      solveButton: true
+    - name: "02-configuration"
+      label: "Configuration"
+      solveButton: true
+    - name: "03-test"
+      label: "Test"
+      solveButton: true
+    - name: "04-stress"
+      label: "Stress"
+      solveButton: true
+    - name: "05-addanotherhost"
+      label: "Addanotherhost"
+      solveButton: true
+
+tabs:
+  - name: ">_ terminal"
+    url: /wetty
