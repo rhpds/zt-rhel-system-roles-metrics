@@ -2,7 +2,7 @@
 virtualmachines:
   - name: "rhel2"
     image: "rhel-9-4-05-27-24"
-    memory: "2G"
+    memory: "4G"
     cores: 1
     image_size: "40G"
     tags:
@@ -12,7 +12,7 @@ virtualmachines:
       - default
   - name: "rhel3"
     image: "rhel-9-4-05-27-24"
-    memory: "2G"
+    memory: "4G"
     cores: 1
     image_size: "40G"
     tags:
@@ -22,7 +22,7 @@ virtualmachines:
       - default
   - name: "rhel"
     image: "rhel-9-4-05-27-24"
-    memory: "2G"
+    memory: "4G"
     cores: 1
     image_size: "40G"
     tags:
@@ -32,7 +32,7 @@ virtualmachines:
       - default
   - name: "rhel4"
     image: "rhel-9-4-05-27-24"
-    memory: "2G"
+    memory: "4G"
     cores: 1
     image_size: "40G"
     tags:
