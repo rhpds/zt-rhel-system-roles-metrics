@@ -44,7 +44,7 @@ virtualmachines:
             name: grafana
     routes:
       - name: grafana
-        host: cockpit
+        host: grafana
         service: grafana
         targetPort: 3000
         tls: true
