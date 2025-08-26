@@ -28,5 +28,5 @@ tabs:
     url: /wetty_rhel3/ssh/root
   - name: "rhel4"
     url: /wetty_rhel4/ssh/root
-  - name: "RHEL Web Console"
-    url: https://cockpit-${guid}.${domain}/
+  - name: "Grafana"
+    url: https://grafana-${guid}.${domain}/
