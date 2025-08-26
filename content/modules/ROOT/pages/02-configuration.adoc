@@ -72,6 +72,7 @@ to open for the `+pmcd+` and `+grafana+` services in the inventory.
 tee -a ~/metrics/metrics.yml << EOF
 - name: Use metrics system role to configure PCP metrics recording
   hosts: servers
+  remote_user: root
   roles:
     - redhat.rhel_system_roles.metrics
     - redhat.rhel_system_roles.firewall
