@@ -1,4 +1,9 @@
+:imagesdir: ../assets/images
+
 == Log into Grafana
+
+[%collapsible]
+====
 
 In the previous challenge, we installed Grafana on `+rhel+` and PCP on
 `+rhel2+` and `+rhel3+`.
@@ -6,7 +11,7 @@ In the previous challenge, we installed Grafana on `+rhel+` and PCP on
 Click on the `+RHEL Grafana Console+` tab.
 
 .Grafana Tab
-image::../assets/grafanatab.png[Grafana Tab]
+image::grafanatab.png[Grafana Tab]
 
 Log into Grafana with the following credentials.
 
@@ -25,7 +30,9 @@ admin
 ----
 
 .Grafana Login Menu
-image::../assets/grafanaloginmenu.png[Grafana Login Menu]
+image::grafanaloginmenu.png[Grafana Login Menu]
+
+====
 
 == Grafana first login
 

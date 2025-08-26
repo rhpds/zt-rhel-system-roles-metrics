@@ -25,14 +25,16 @@ installation and configuration has taken place.
 
 We’ll start by installing RHEL System Roles on `+rhel+`
 
-First, click on the menu tab labelled `+rhel+`. Click this button
-link:tab-0[button label="`rhel`"] to switch to the `+rhel+` tab.
+First, click on the menu tab labelled `+rhel+`.
 
 .rhel tab
 image::rhel_tab.png[rhel tab]
 
 Click the `+run+` button to run the following command into the `+rhel+`
 terminal.
+
+.Run button
+image::run_button.png[run button]
 
 [source,bash,run]
 ----
