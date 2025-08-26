@@ -20,5 +20,11 @@ antora:
       solveButton: true
 
 tabs:
-  - name: ">_ terminal"
-    url: /wetty
+  - name: "rhel"
+    url: /wetty_rhel/ssh/root
+  - name: "rhel2"
+    url: /wetty_rhel2/ssh/root
+  - name: "rhel3"
+    url: /wetty_rhel3/ssh/root
+  - name: "rhel4"
+    url: /wetty_rhel4/ssh/root

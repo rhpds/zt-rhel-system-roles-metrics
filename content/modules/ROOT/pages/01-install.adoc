@@ -1,3 +1,5 @@
+:imagesdir: ../assets/images
+
 == Introduction
 
 In this lab there are 4 hosts. Below is a description of them and their
@@ -27,7 +29,7 @@ First, click on the menu tab labelled `+rhel+`. Click this button
 link:tab-0[button label="`rhel`"] to switch to the `+rhel+` tab.
 
 .rhel tab
-image::../assets/rhel_tab.png[rhel tab]
+image::rhel_tab.png[rhel tab]
 
 Click the `+run+` button to run the following command into the `+rhel+`
 terminal.
@@ -40,6 +42,6 @@ dnf install -y rhel-system-roles
 The resulting output should look similar to below.
 
 .output
-image::../assets/dnf_output.png[output]
+image::dnf_output.png[output]
 
 RHEL System Roles are now installed.
