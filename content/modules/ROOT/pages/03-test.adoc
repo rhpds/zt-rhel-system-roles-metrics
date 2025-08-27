@@ -13,6 +13,9 @@ Click on the `+RHEL Grafana Console+` tab.
 .Grafana Tab
 image::grafanatab.png[Grafana Tab]
 
+NOTE: The Grafana login page won't appear until you click refresh button: image:refresh_button.png[Refresh button]
+
+
 Log into Grafana with the following credentials.
 
 Username
@@ -36,55 +39,67 @@ image::grafanaloginmenu.png[Grafana Login Menu]
 
 == Grafana first login
 
+[%collapsible]
+====
 Upon successful login, Grafana will ask you to change the password. Skip
 this for now by clicking on `+Skip+`.
 
 .Skip password
-image::../assets/skippassword.png[Skip password]
+image::skippassword.png[Skip password]
+
+Click on the kebab button on the top left corner.
+
+.Kebab button
+image::kebab.png[Kebab button]
+
+Click on the `+Connections+` tab.
+
+.Connections tab
+image::connections.png[Connections tab]
 
 Click on `+Data Sources+`.
 
 .Data Sources
-image::../assets/datasources.png[Data Sources]
+image::datasources.png[Data Sources]
 
 Click on `+PCP Redis+`.
 
 .pcp redis
-image::../assets/pcpredis.png[pcp redis]
+image::pcpredis.png[pcp redis]
 
 Click on `+Save & Test+`.
 
 .save and test
-image::../assets/savetest.png[save and test]
+image::savetest.png[save and test]
 
 Here’s what a successful result should look like.
 
 .success
-image::../assets/savetestsuccess.png[success]
+image::savetestsuccess.png[success]
 
 Click on the `+Dashboards+` tab.
 
 .dashboards tab
-image::../assets/dashboardstab.png[dashboards tab]
+image::dashboardstab.png[dashboards tab]
 
 Click on `+Import+` next to the `+PCP Redis: Host Overview+` title bar.
 
 .pcpredishostoverview
-image::../assets/pcpredishostoverview.png[pcpredishostoverview]
+image::pcpredishostoverview.png[pcpredishostoverview]
 
 .success
-image::../assets/pcpredishostoverviewsuccess.png[success]
+image::pcpredishostoverviewsuccess.png[success]
 
 Click on `+PCP Redis: Host Overview+`.
 
 .button
-image::../assets/pcpredishostoverviewclick.png[button]
+image::pcpredishostoverviewclick.png[button]
 
 A dashboard showing the performance metrics for the `+rhel+` host will
 be displayed.
 
 .result
-image::../assets/dashboard.png[result]
+image::dashboard.png[result]
 
 You can see that only a small amount of data has been collected since
 the graph lines are short.
@@ -93,4 +108,6 @@ To view the performance metrics for the `+rhel2+` and `+rhel3+` host,
 click the `+host+` dropdown bar.
 
 .dropdown
-image::../assets/dropdown.png[dropdown]
+image::dropdown.png[dropdown]
+
+====

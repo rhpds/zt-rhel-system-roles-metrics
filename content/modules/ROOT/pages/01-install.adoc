@@ -36,6 +36,8 @@ terminal.
 .Run button
 image::run_button.png[run button]
 
+Try it below.
+
 [source,bash,run]
 ----
 dnf install -y rhel-system-roles
