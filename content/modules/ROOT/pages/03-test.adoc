@@ -74,10 +74,6 @@ image::hostspec.png[Hostspec field]
 You can see that only a small amount of data has been collected since
 the graph lines are short.
 
-To view the performance metrics for the `+rhel2+` and `+rhel3+` host,
-click the `+host+` dropdown bar.
-
-.dropdown
-image::dropdown.png[dropdown]
+To view the performance metrics for the `+rhel3+` host, enter `+rhel3+` in the hostspec field.
 
 ====

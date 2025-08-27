@@ -1,12 +1,13 @@
+:imagesdir: ../assets/images
+
 == Run a stress test
 
 Let’s run a stress test on `+rhel2+` and `+rhel3+`
 
-Click on this button link:tab-1[button label="`rhel2`"] to switch to the
-`+rhel2+` terminal tab.
+Switch to the `+rhel2+` terminal tab.
 
 .rhel2
-image::../assets/rhel2tab.png[rhel2]
+image::rhel2tab.png[rhel2]
 
 Run the following command.
 
@@ -20,8 +21,7 @@ and disk. You can play around with the `+--cpu+`, `+--io+`, and `+--vm+`
 flags to generate different loads. `+--timeout+` specifies the duration
 of the test.
 
-Click on this button link:tab-2[button label="`rhel3`"] to switch to the
-`+rhel3+` terminal tab.
+Switch to the `+rhel3+` terminal tab.
 
 Run the `+stress+` command as above to generate an artificial load.
 
@@ -34,7 +34,5 @@ When these `+stress+` tests are complete, go back to the Grafana
 dashboard and view the performance metrics of the `+rhel2+` and
 `+rhel3+` hosts. The dashboards might take a minute or two to update.
 
-You can also experiment with the dash board scales and intervals.
-
-.dash
-image::../assets/scales.png[dash]
+.Grafana dashboard
+image::grafana_dashboard.png[Grafana dashboard]

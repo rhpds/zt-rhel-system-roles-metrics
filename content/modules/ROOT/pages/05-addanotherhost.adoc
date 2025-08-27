@@ -1,13 +1,10 @@
-So far we have configured 2 RHEL hosts (`+rhel2+`, `+rhel3+`) to be
-monitored and have their performance metrics collected by host running
-Grafana and Redis (`+rhel+`). We’ll now edit the play book to configure
-and add another host `+rhel4+`. This exercise is useful as you add more
-and more hosts to your datacenter.
+:imagesdir: ../assets/images
 
-The following configuration file will install PCP on the host `+rhel4+`.
-As well, it will tell the `+rhel+` Grafana host to monitor `+rhel4+`, in
-addition to the other hosts. Run this command in the link:tab-0[button
-label="`rhel`"] terminal.
+== Monitor another host by adding it to the inventory
+
+So far we have configured 2 RHEL hosts (`+rhel2+`, `+rhel3+`) to be monitored and have their performance metrics collected by host running Grafana (`+rhel+`). We’ll now edit the play book to configure and add another host `+rhel4+`. This exercise is useful as you add more and more hosts to your datacenter.
+
+The following configuration file will install PCP on the host `+rhel4+`. As well, it will tell the `+rhel+` Grafana host to monitor `+rhel4+`, in addition to the other hosts. Run this command in the `+rhel+` terminal.
 
 [source,bash,run]
 ----
@@ -20,26 +17,23 @@ all:
         rhel3:
         rhel4:
       vars:
-        firewall:
-          - service: pmcd
-            state: enabled
         metrics_retention_days: 7
+        metrics_manage_firewall: true
+        metrics_manage_selinux: true
     metrics_monitor:
       hosts:
         rhel:
       vars:
-        firewall:
-          - service: grafana
-            state: enabled
         metrics_graph_service: yes
         metrics_query_service: yes
         metrics_retention_days: 7
         metrics_monitored_hosts:  "{{ groups['servers'] }}"
+        metrics_manage_firewall: true
+        metrics_manage_selinux: true
 EOF
 ----
 
-You may notice the only change made has been to add `+rhel4+` to this
-section:
+You may notice the only change made has been to add `+rhel4+` to this section:
 
 [source,yaml,nocopy]
 ----
@@ -52,12 +46,7 @@ all:
         rhel4:
 ----
 
-You may ask yourself why we did not remove the originally configured
-hosts or the Grafana configuration. The reason is because RHEL System
-Roles are based on Ansible. Ansible playbooks are designed to be run
-multiple times ensuring that the same result is obtained on each target
-host. Therefore, running the playbook multiple times on the same hosts
-should obtain the same result on each host.
+You may ask yourself why we did not remove the originally configured hosts or the Grafana configuration. The reason is because RHEL System Roles are based on Ansible. Ansible playbooks are designed to be run multiple times ensuring that the same result is obtained on each target host. Therefore, running the playbook multiple times on the same hosts should obtain the same result on each host.
 
 Run the playbook with the following command to execute the modified
 playbook.
@@ -75,7 +64,7 @@ You should be able to see `+rhel4+` has been added and metrics are being
 collected.
 
 .rhel4
-image::../assets/rhel4.png[rhel4]
+image::rhel4.png[rhel4]
 
 Congratulations on completing this lab!
 
