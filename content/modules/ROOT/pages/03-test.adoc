@@ -1,5 +1,9 @@
 :imagesdir: ../assets/images
 
+== Test Grafana and PCP
+
+In this section, we will test the Grafana and PCP installation.
+
 == Log into Grafana
 
 [%collapsible]
@@ -37,7 +41,7 @@ image::grafanaloginmenu.png[Grafana Login Menu]
 
 ====
 
-== Grafana first login
+== Grafana configuration and test
 
 [%collapsible]
 ====
@@ -52,54 +56,20 @@ Click on the kebab button on the top left corner.
 .Kebab button
 image::kebab.png[Kebab button]
 
-Click on the `+Connections+` tab.
+Click on the `+Apps+` button.
 
-.Connections tab
-image::connections.png[Connections tab]
+.Apps button
+image::apps_button.png[Apps button]
 
-Click on `+Data Sources+`.
+Click on the `+PCP Vector Checklist+` button.
 
-.Data Sources
-image::datasources.png[Data Sources]
+.PCP Vector Checklist
+image::pcp_vector_checklist.png[PCP Vector Checklist]
 
-Click on `+PCP Redis+`.
+In the hostspec field, enter `+rhel2+`.
 
-.pcp redis
-image::pcpredis.png[pcp redis]
-
-Click on `+Save & Test+`.
-
-.save and test
-image::savetest.png[save and test]
-
-Here’s what a successful result should look like.
-
-.success
-image::savetestsuccess.png[success]
-
-Click on the `+Dashboards+` tab.
-
-.dashboards tab
-image::dashboardstab.png[dashboards tab]
-
-Click on `+Import+` next to the `+PCP Redis: Host Overview+` title bar.
-
-.pcpredishostoverview
-image::pcpredishostoverview.png[pcpredishostoverview]
-
-.success
-image::pcpredishostoverviewsuccess.png[success]
-
-Click on `+PCP Redis: Host Overview+`.
-
-.button
-image::pcpredishostoverviewclick.png[button]
-
-A dashboard showing the performance metrics for the `+rhel+` host will
-be displayed.
-
-.result
-image::dashboard.png[result]
+.Hostspec field
+image::hostspec.png[Hostspec field]
 
 You can see that only a small amount of data has been collected since
 the graph lines are short.

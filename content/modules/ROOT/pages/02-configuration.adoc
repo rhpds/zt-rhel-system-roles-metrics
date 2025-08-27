@@ -2,6 +2,10 @@
 
 == Configure the playbook
 
+In this section, we will configure the playbook to collect metrics from the hosts in the inventory (on hosts `+rhel2+`, `+rhel3+`), and configure Grafana to display the metrics on the `+rhel+` system.
+
+== Create the inventory file and configure Grafana
+
 [%collapsible]
 ====
 Let’s create a directory to store our playbook as well as a
@@ -41,13 +45,12 @@ all:
       hosts:
         rhel:
       vars:
-        firewall:
-          - service: grafana
-            state: enabled
         metrics_graph_service: yes
         metrics_query_service: yes
         metrics_retention_days: 7
         metrics_monitored_hosts:  "{{ groups['servers'] }}"
+        metrics_manage_firewall: true
+        metrics_manage_selinux: true
 EOF
 ----
 
@@ -82,13 +85,12 @@ tee -a ~/metrics/metrics.yml << EOF
   remote_user: root
   roles:
     - redhat.rhel_system_roles.metrics
-    - redhat.rhel_system_roles.firewall
 
 - name: Use metrics system role to configure Grafana
   hosts: metrics_monitor
+  remote_user: root
   roles:
     - redhat.rhel_system_roles.metrics
-    - redhat.rhel_system_roles.firewall
 EOF
 ----
 
@@ -98,7 +100,7 @@ EOF
 
 [%collapsible]
 ====
-Now run the playbook.
+Now run the playbook. It will take a few minutes to complete.
 
 [source,bash,run]
 ----
