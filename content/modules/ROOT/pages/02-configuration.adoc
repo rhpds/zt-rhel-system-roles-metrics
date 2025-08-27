@@ -37,10 +37,9 @@ all:
         rhel2:
         rhel3:
       vars:
-        firewall:
-          - service: pmcd
-            state: enabled
         metrics_retention_days: 7
+        metrics_manage_firewall: true
+        metrics_manage_selinux: true
     metrics_monitor:
       hosts:
         rhel:
@@ -82,13 +81,11 @@ to open for the `+pmcd+` and `+grafana+` services in the inventory.
 tee -a ~/metrics/metrics.yml << EOF
 - name: Use metrics system role to configure PCP metrics recording
   hosts: servers
-  remote_user: root
   roles:
     - redhat.rhel_system_roles.metrics
 
 - name: Use metrics system role to configure Grafana
   hosts: metrics_monitor
-  remote_user: root
   roles:
     - redhat.rhel_system_roles.metrics
 EOF
