@@ -48,8 +48,7 @@ all:
 
 You may ask yourself why we did not remove the originally configured hosts or the Grafana configuration. The reason is because RHEL System Roles are based on Ansible. Ansible playbooks are designed to be run multiple times ensuring that the same result is obtained on each target host. Therefore, running the playbook multiple times on the same hosts should obtain the same result on each host.
 
-Run the playbook with the following command to execute the modified
-playbook.
+Run the playbook in the `+rhel+` terminal with the following command to execute the modified playbook.
 
 [source,bash,run]
 ----
