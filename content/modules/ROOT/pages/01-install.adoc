@@ -11,11 +11,11 @@ purpose.
 |`+rhel+` |Control node where the metrics system role will run. As well,
 Grafana will be installed here.
 
-|`+rhel2+` |RHEL9 host where we will collect metrics from.
+|`+rhel2+` |RHEL10 host where we will collect metrics from.
 
-|`+rhel3+` |RHEL9 host where we will collect metrics from.
+|`+rhel3+` |RHEL10 host where we will collect metrics from.
 
-|`+rhel4+` |RHEL9 host where we will collect metrics from.
+|`+rhel4+` |RHEL10 host where we will collect metrics from.
 |===
 
 Initially we will configure the first 3 hosts. After, we will add
