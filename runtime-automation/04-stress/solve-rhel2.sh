@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "Solved module called 04-stress" >> /tmp/progress.log
+stress --cpu 16 --io 3 --vm 5 --vm-bytes 128M --timeout 60s

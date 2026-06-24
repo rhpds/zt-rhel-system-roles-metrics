@@ -35,7 +35,7 @@ EOF
 
 You may notice the only change made has been to add `+rhel4+` to this section:
 
-[source,yaml,nocopy]
+[source,text]
 ----
 all:
   children:

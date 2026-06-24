@@ -1,2 +1,2 @@
 #!/bin/sh
-echo "Solved module called 01-install" >> /tmp/progress.log
+dnf install -y rhel-system-roles
